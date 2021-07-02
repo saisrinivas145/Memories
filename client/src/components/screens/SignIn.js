@@ -62,7 +62,7 @@ const SignIn  = ()=>{
                 Login
             </button>
 
-            <p style={{fontSize:"22px"}}>
+            <p style={{fontSize:"18px"}}>
                 Don't have an account ?
                   <Link to="/signup">
                     <span className="login-signup"> Signup </span>
@@ -71,7 +71,7 @@ const SignIn  = ()=>{
 
             <p>
                 <Link to ="/reset">
-                   <span className="login-signup" style={{fontSize:"21px"}}> Forget Password? </span> 
+                   <span className="login-signup" style={{fontSize:"16px"}}> Forget Password? </span> 
                  </Link>
             </p>
 

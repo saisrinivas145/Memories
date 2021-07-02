@@ -105,7 +105,7 @@ const SignIn  = ()=>{
                 SignUP
             </button>
 
-            <p style={{fontSize:"23px"}}>
+            <p style={{fontSize:"18px"}}>
                 Already have an account ?
                 <Link to="/signin">
                     <span className="login-signup"> Login </span>

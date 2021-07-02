@@ -9,9 +9,6 @@ a{
   font-family: 'Pacifico', cursive;
 }
 
-.brand-logo:hover{
-  font-weight: 600;
-}
 
 .mycard{
   margin-top: 30px;
@@ -72,9 +69,6 @@ a{
   color:rgb(8, 195, 195);
 }
 
-.hover-animation:hover{
-  font-weight: 500;
 
-}
 
 

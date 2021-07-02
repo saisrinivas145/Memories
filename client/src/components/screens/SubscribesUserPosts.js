@@ -140,7 +140,12 @@ const Home  = ()=>{
                data.map(item=>{
                    return(
                        <div className="card home-card" key={item._id}>
-                            <h5 style={{padding:"5px 10px"}} className="hover-animation"><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.name}</Link> {item.postedBy._id == state._id 
+                       <div style={{float: "left", padding: "5px 12px"}}>
+                                <Link to={item.postedBy._id == state._id ? "/profile" : "/profile/"+item.postedBy._id} >
+                                <img src = {item.postedBy.pic} style={{width: "30px", height: "30px", borderRadius: "50%"}} />
+                                </Link>
+                            </div>
+                            <h5 style={{paddingTop:"5px",fontWeight:500}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.name}</Link> {item.postedBy._id == state._id 
                             && <i className="material-icons" style={{
                                 float:"right"
                             }} 
@@ -165,9 +170,18 @@ const Home  = ()=>{
                             }
                             
                            
-                                <h6>{item.likes.length} likes</h6>
-                                <h6>{item.title}</h6>
+                                <h6>{item.likes.length} likes &nbsp;&nbsp;&nbsp; {item.comments.length} comments</h6>
+                                <h6 style={{fontWeight:"500",marginTop:"20px"}}>{item.title}</h6>
                                 <p>{item.body}</p>
+
+                                <form onSubmit={(e)=>{
+                                    e.preventDefault()
+                                    makeComment(e.target[0].value,item._id)
+                                    setComment("")
+                                }}>
+                                  <input type="text" placeholder="add a comment" value={comment} onChange={e=>setComment(e.target.value)} />  
+                                </form>
+
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -178,13 +192,7 @@ const Home  = ()=>{
                                         )
                                     })
                                 }
-                                <form onSubmit={(e)=>{
-                                    e.preventDefault()
-                                    makeComment(e.target[0].value,item._id)
-                                    setComment("")
-                                }}>
-                                  <input type="text" placeholder="add a comment" value={comment} onChange={e=>setComment(e.target.value)} />  
-                                </form>
+
                                 
                             </div>
                         </div> 
